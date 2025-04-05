@@ -68,11 +68,9 @@ if uploaded_file:
         st.markdown(f"**Similarity:** {similarity:.2f}%")
         st.markdown(f"**Shape Code:** `{shape}`  |  **Pattern Code:** `{pattern}`")
 
-        img_path = row['image_path']
-        if os.path.exists(img_path):
-            match_img = Image.open(img_path)
-            st.image(match_img, width=200)
-
+       product_id = row['product_id']
+img_url = f"https://solovintage.net/image/cache/catalog/Products/{product_id}-520x576.JPG"
+st.image(img_url, width=220, caption=f"Product ID: {product_id}")
         shown += 1
         if shown >= 3:
             break
